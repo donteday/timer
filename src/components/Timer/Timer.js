@@ -21,7 +21,7 @@ const Timer = () => {
     }
 
     function startTimer() {
-        
+
         let value = timerInputRef.current.value;
         if (timeLeft === 0) return;
         setPause(!pause);
@@ -52,10 +52,12 @@ const Timer = () => {
                 {Math.floor((timeLeft / 3600)).toFixed(0).toString().padStart(2, '0')
                     + ':' + Math.floor((timeLeft % 3600 / 60)).toFixed(0).toString().padStart(2, '0')
                     + ':' + (timeLeft % 60).toString().padStart(2, '0')}</span>
-            <input className='timer__input' type="number" placeholder="Seconds" name="" id="" ref={timerInputRef} onChange={inputFilter} />
-            <div className='timer__buttons'>
-                <button className='timer__btn' onClick={startTimer}>{pause ? 'Start' : 'Pause'}</button>
-                <button className='timer__btn' onClick={resetTimer}>Reset</button>
+            <div className='timer__container'>
+                <input className='timer__input' type="number" placeholder="Seconds" name="" id="" ref={timerInputRef} onChange={inputFilter} />
+                <div className='timer__buttons'>
+                    <button className='timer__btn' onClick={startTimer}>{pause ? 'Start' : 'Pause'}</button>
+                    <button className='timer__btn' onClick={resetTimer}>Reset</button>
+                </div>
             </div>
 
         </div>
